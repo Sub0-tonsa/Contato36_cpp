@@ -1,15 +1,15 @@
 /*
 	Name: HeapSort.cpp
-	Author: Vinicius Lima
+	Author: Giovanni Tonsa
 	Date: 10/11/26 10:54
-	Description: Programa pra implementar metodo de ordenação Heap Sort
+	Description: Programa pra implementar metodo de ordenaÃ§Ã£o Heap Sort
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-//Seção de Prototipação
+//SeÃ§Ã£o de PrototipaÃ§Ã£o
 void heapfy(int *, int, int);
 void heapSort(int *, int);
 void swap(int*, int *);
@@ -25,8 +25,8 @@ main()
 	int i;
 	tam = sizeof(vet) / sizeof(int);
 	
-	//geração randomic de elementos
-	srand(time(NULL)); //planta a semente aleatoria de acordo com o tempó
+	//geraÃ§Ã£o randomic de elementos
+	srand(time(NULL)); //planta a semente aleatoria de acordo com o tempÃ³
 		for(i = 0; i < tam; i++)
 		vet[i] = rand() % 10000;
 	puts("Vetor Original: ");
@@ -42,9 +42,9 @@ main()
 	printf("\n\n Tempo de ordenacao: %.3f", tempoDecorrido);
 	
 }//fim main
-//função principal que monta a arvore e submete a função
+//funÃ§Ã£o principal que monta a arvore e submete a funÃ§Ã£o
 //recursiva heapfy para verificar se as regras de max ou min heap 
-//estão atendidas
+//estÃ£o atendidas
 void heapSort(int *V, int n)
 {
 	//1 Constroi um max Heap
@@ -58,7 +58,7 @@ void heapSort(int *V, int n)
 		//Move o elemento atual (Maior - Max Heap)
 		//para o fim do array
 		swap(&V[0], &V[i]);
-		//Invoca a função heapfy na raiz para restaurar
+		//Invoca a funÃ§Ã£o heapfy na raiz para restaurar
 		//as propriedades do heap
 		heapfy(V, i, 0);
 	}	
@@ -73,7 +73,7 @@ void imprimir(int vet[])
 	puts("");
 }
 
-//Função que realiza a troca do ultimo elemento com o primeiro da arvore
+//FunÃ§Ã£o que realiza a troca do ultimo elemento com o primeiro da arvore
 void swap(int *a, int *b)
 {
 	int aux = *a;
@@ -81,8 +81,8 @@ void swap(int *a, int *b)
 	*b = aux;
 	
 }
-//Função que realiza o heapfy, ou seja, testa se o pai é maior que o filho (MAX Heap)
-//ou se é menor que o filho (MIN Heap) e faz o "Swap! para fozer a troca entre eles.
+//FunÃ§Ã£o que realiza o heapfy, ou seja, testa se o pai Ã© maior que o filho (MAX Heap)
+//ou se Ã© menor que o filho (MIN Heap) e faz o "Swap! para fozer a troca entre eles.
 void heapfy(int *V, int n, int i)
 {
 	//imprimir(vet);
@@ -90,7 +90,7 @@ void heapfy(int *V, int n, int i)
 	int esq = 2 * i + 1;//indice filho da esquerda
 	int dir = 2 * i + 2;//indice filho da direita
 	
-	//se o filho é maior que o pai
+	//se o filho Ã© maior que o pai
 	if(esq < n && V[esq] > V[maior])
 		maior = esq;
 		//se filho da direita for maior que o pai
@@ -101,7 +101,7 @@ void heapfy(int *V, int n, int i)
 	{
 		swap(&V[i], &V[maior]);
 		//invoca recursivamente heapfy
-		//na sub-árvore afetada
+		//na sub-Ã¡rvore afetada
 		heapfy(V, n, maior);
 	}
 }
